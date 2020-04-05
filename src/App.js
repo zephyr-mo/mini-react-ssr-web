@@ -1,24 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
+const fetch = () => {
+  axios.get('/hello').then(res => {
+    const { data } = res;
+    console.log({ data });
+  }).catch(err => { console.log(err); })
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button onClick={fetch}>click me to fetch</button>
     </div>
   );
 }
