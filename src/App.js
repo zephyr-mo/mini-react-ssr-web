@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
 
 const fetch = () => {
@@ -12,7 +11,6 @@ const fetch = () => {
 function App() {
   return (
     <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
         <button onClick={fetch}>click me to fetch</button>
     </div>
   );
