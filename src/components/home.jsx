@@ -15,6 +15,7 @@ const Home = () => {
     <div>
       <img src={logo} style={{ width: 10 }} className="App-logo" alt="logo" />
       <Link to='/test'>go to test page</Link>
+      <Link to='/test2'>go to test 2 page</Link>
       <button onClick={fetch}>click me to fetch</button>
     </div>
   );
