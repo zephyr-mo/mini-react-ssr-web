@@ -1,19 +1,27 @@
 import React from 'react';
-import axios from 'axios';
-import logo from './logo.svg';
+import {
+  Route
+} from 'react-router-dom';
+import router from './router';
 import './App.css';
 
-const fetch = () => {
-  axios.get('/hello').then(res => {
-    const { data } = res;
-    console.log({ data });
-  }).catch(err => { console.log(err); })
+const configRoute = (router)=>{
+  return (
+     <div>
+      {
+        router.map((route, index) => {
+          const { path, exact, component } = route;
+          return <Route key= {index + 'route-render'} path={path} exact={exact || false} component={component} />
+        })
+      }
+    </div>
+  )
 }
+
 function App() {
   return (
     <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={fetch}>click me to fetch</button>
+      { configRoute(router) }
     </div>
   );
 }
