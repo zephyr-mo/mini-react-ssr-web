@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route
+  Route
 } from 'react-router-dom';
 import router from './router';
 import './App.css';
@@ -21,9 +21,7 @@ const configRoute = (router)=>{
 function App() {
   return (
     <div className="App">
-      <Router>
-        { configRoute(router) }
-      </Router>
+      { configRoute(router) }
     </div>
   );
 }
